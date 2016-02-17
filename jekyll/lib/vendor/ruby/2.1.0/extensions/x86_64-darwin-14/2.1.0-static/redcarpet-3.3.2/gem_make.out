@@ -1,0 +1,35 @@
+/Users/mike/.rbenv/versions/2.1.5/bin/ruby extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling autolink.c
+compiling buffer.c
+buffer.c:104:45: warning: passing 'const struct buf *' to parameter of type 'struct buf *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        if (buf->size + 1 <= buf->asize || bufgrow(buf, buf->size + 1) == BUF_OK) {
+                                                   ^~~
+buffer.c:53:21: note: passing argument to parameter 'buf' here
+bufgrow(struct buf *buf, size_t neosz)
+                    ^
+1 warning generated.
+compiling houdini_href_e.c
+compiling houdini_html_e.c
+compiling html.c
+compiling html_smartypants.c
+compiling markdown.c
+markdown.c:2834:43: warning: passing 'const uint8_t *' (aka 'const unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                if (codefences_enabled && (is_codefence(document + beg, doc_size - beg, NULL) != 0))
+                                                        ^~~~~~~~~~~~~~
+markdown.c:1387:23: note: passing argument to parameter 'data' here
+is_codefence(uint8_t *data, size_t size, struct buf *syntax)
+                      ^
+1 warning generated.
+compiling rc_markdown.c
+compiling rc_render.c
+compiling stack.c
+linking shared-object redcarpet.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 redcarpet.bundle ./.gem.20150905-53913-rgoitn
+installing default redcarpet libraries

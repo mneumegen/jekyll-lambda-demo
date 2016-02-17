@@ -1,0 +1,21 @@
+/Users/mike/.rbenv/versions/2.1.5/bin/ruby extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling porter.c
+porter.c:359:27: warning: '&&' within '||' [-Wlogical-op-parentheses]
+      if (a > 1 || a == 1 && !cvc(z, z->k - 1)) z->k--;
+                ~~ ~~~~~~~^~~~~~~~~~~~~~~~~~~~
+porter.c:359:27: note: place parentheses around the '&&' expression to silence this warning
+      if (a > 1 || a == 1 && !cvc(z, z->k - 1)) z->k--;
+                          ^
+                   (                          )
+1 warning generated.
+compiling porter_wrap.c
+linking shared-object stemmer.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 stemmer.bundle ./.gem.20150905-53913-nk8669
+installing default stemmer libraries
